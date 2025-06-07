@@ -29,6 +29,7 @@ texture = ExtResource("2_ko5km")
 shape = SubResource("RectangleShape2D_3et28")
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = -56.0
 offset_top = -80.0
 offset_right = 51.0
