@@ -7,19 +7,30 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3et28"]
 size = Vector2(80, 80)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_debugLabel", "_sprites")]
 script = ExtResource("1_3tp8u")
+_debugLabel = NodePath("DebugLabel")
+_sprites = NodePath("Sprites")
 
-[node name="Body" type="Node2D" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="SpriteBody" type="Sprite2D" parent="Body"]
+[node name="Body" type="Node2D" parent="Sprites"]
+
+[node name="SpriteBody" type="Sprite2D" parent="Sprites/Body"]
 texture = ExtResource("1_fila2")
 
-[node name="Barrel" type="Node2D" parent="."]
+[node name="Barrel" type="Node2D" parent="Sprites"]
 
-[node name="SpriteBarrel" type="Sprite2D" parent="Barrel"]
+[node name="SpriteBarrel" type="Sprite2D" parent="Sprites/Barrel"]
 position = Vector2(0, -24)
 texture = ExtResource("2_ko5km")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3et28")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -80.0
+offset_right = 51.0
+offset_bottom = -57.0
+text = "DEBUG LABEL"
